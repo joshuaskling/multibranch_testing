@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent { any }
     stages {
-        stage('Stage 1') {
+        stage("build") {
             steps {
-                echo "hello world"
+                echo "go version"
             }
         }
     }
