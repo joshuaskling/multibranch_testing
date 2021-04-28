@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                echo "Oh no this thing exploded!"
+                echo "Cooool stuff"
             }
         }
     }
