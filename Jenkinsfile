@@ -6,6 +6,7 @@ pipeline {
                 withMaven {
                     bat "mvn clean verify"
                 }
+                echo "This is a test for git"
             }
         }
     }
