@@ -6,10 +6,7 @@ pipeline {
                 withMaven {
                     bat "mvn clean verify"
                 }
-                def buildResult = bat{
-                    returnStdout: true,
-                    script: "${echo 'this is a test'}"
-                }
+                buildResult="$(echo 'test')"
             }
         }
         stage("Test"){
