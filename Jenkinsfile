@@ -3,12 +3,8 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                buildResult = """${sh(
-                    returnStdout: true,
-                    script: 'echo "clang"'
-                )}"""
                 withMaven {
-                    buildResult = bat "mvn clean verify"
+                    bat "mvn clean verify"
                 }
             }
         }
@@ -21,7 +17,6 @@ pipeline {
         stage("Deploy"){
             steps{
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Build result: ${buildResult}"
             }
         }
     }
