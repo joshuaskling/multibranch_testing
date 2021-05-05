@@ -14,5 +14,11 @@ pipeline {
                 junit allowEmptyResults: true, testResults: "${WORKSPACE}/test-results/*.xml"
             }
         }
+        stage("Deploy"){
+            steps{
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                bat "make publish"
+            }
+        }
     }
 }
