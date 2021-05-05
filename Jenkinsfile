@@ -11,7 +11,7 @@ pipeline {
         stage("Test"){
             steps{
                 recordIssues tool: java(), ignoreQualityGate: false, ignoreFailedBuilds: true
-                junit 'test-results.xml'
+                junit allowEmptyResults: true, testResults: "${WORKSPACE}/test-results/*.xml"
             }
         }
     }
