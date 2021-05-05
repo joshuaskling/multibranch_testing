@@ -3,6 +3,10 @@ pipeline {
     stages {
         stage("Build") {
             steps {
+                buildResult = """${sh(
+                    returnStdout: true,
+                    script: 'echo "clang"'
+                )}"""
                 withMaven {
                     buildResult = bat "mvn clean verify"
                 }
